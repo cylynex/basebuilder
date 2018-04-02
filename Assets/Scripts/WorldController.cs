@@ -53,7 +53,7 @@ public class WorldController : MonoBehaviour {
 	}
 
 
-    void OnTileTypeChanged(Tile tileData, GameObject tileObject) {
+    public void OnTileTypeChanged(Tile tileData, GameObject tileObject) {
         if (tileData.type == Tile.TileType.Floor) {
             tileObject.GetComponent<SpriteRenderer>().sprite = floorSprite;
         } else if (tileData.type == Tile.TileType.Empty) {

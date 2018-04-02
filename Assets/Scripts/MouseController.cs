@@ -27,10 +27,23 @@ public class MouseController : MonoBehaviour {
             circleCursor.SetActive(false);
         }
 
+        // Left Mouse click
+        if (Input.GetMouseButtonUp(0)) {
+            if (tileUnderMouse != null) {
+                if (tileUnderMouse.type == Tile.TileType.Empty) {
+                    tileUnderMouse.type = Tile.TileType.Floor;
+                } else {
+                    tileUnderMouse.type = Tile.TileType.Empty;
+                }
+
+                GameObject clickedGameObject = GetTileObject(tileUnderMouse.x, tileUnderMouse.y);
+                WorldController.instance.OnTileTypeChanged(tileUnderMouse,clickedGameObject);
+            }
+        }
+
         // Screen Dragging
         if (Input.GetMouseButton(1)) { 
             Vector3 diff = lastFramePosition - currentFramePosition;
-            Debug.Log("difference is " + diff);
             Camera.main.transform.Translate(diff);
         }
 
@@ -44,8 +57,14 @@ public class MouseController : MonoBehaviour {
         int y = Mathf.FloorToInt(coord.y);
 
         GameObject.FindObjectOfType<WorldController>();
-        return WorldController.instance.world.GetTileAt(x,y);
+        return WorldController.instance.world.GetTileAt(x, y);
+    }
 
+
+    GameObject GetTileObject(float x, float y) {
+        string thisgo = "Tile_" + x + "_" + y;
+        GameObject thisobj = GameObject.Find(thisgo);
+        return thisobj;
     }
 
 }
