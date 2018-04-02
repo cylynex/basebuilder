@@ -326,6 +326,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\InstalledObject.cs" />
     <Compile Include="Assets\Scripts\LooseObject.cs" />
+    <Compile Include="Assets\Scripts\MouseController.cs" />
     <Compile Include="Assets\Scripts\Tile.cs" />
     <Compile Include="Assets\Scripts\World.cs" />
     <Compile Include="Assets\Scripts\WorldController.cs" />

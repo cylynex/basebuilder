@@ -29,6 +29,7 @@ public class WorldController : MonoBehaviour {
                 }
 
                 tileObject.transform.position = new Vector2(tileData.x, tileData.y);
+                tileObject.transform.SetParent(this.transform, true);
 
             }
         }
@@ -45,7 +46,7 @@ public class WorldController : MonoBehaviour {
 
     void OnTileTypeChanged(Tile tileData, GameObject tileObject) {
         if (tileData.type == Tile.TileType.Floor) {
-            tileObject.GetComponent<SpriteRender>().sprite = floorSprite;
+            tileObject.GetComponent<SpriteRenderer>().sprite = floorSprite;
         } else if (tileData.type == Tile.TileType.Empty) {
             tileObject.GetComponent<SpriteRenderer>().sprite = null;
         } else {
