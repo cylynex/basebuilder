@@ -18,7 +18,14 @@ public class MouseController : MonoBehaviour {
         Vector3 currentFramePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         // Update cursor position
-        circleCursor.transform.position = currentFramePosition;
+        Tile tileUnderMouse = GetTileAtSpot(currentFramePosition);
+        if (tileUnderMouse != null) {
+            circleCursor.SetActive(true);
+            Vector3 cursorPosition = new Vector3(tileUnderMouse.x, tileUnderMouse.y, 0);
+            circleCursor.transform.position = cursorPosition;
+        } else {
+            circleCursor.SetActive(false);
+        }
 
         // Screen Dragging
         if (Input.GetMouseButton(1)) { 
@@ -30,4 +37,15 @@ public class MouseController : MonoBehaviour {
         lastFramePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
 	}
+
+
+    Tile GetTileAtSpot(Vector3 coord) {
+        int x = Mathf.FloorToInt(coord.x);
+        int y = Mathf.FloorToInt(coord.y);
+
+        GameObject.FindObjectOfType<WorldController>();
+        return WorldController.instance.world.GetTileAt(x,y);
+
+    }
+
 }

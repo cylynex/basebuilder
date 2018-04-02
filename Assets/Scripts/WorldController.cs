@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class WorldController : MonoBehaviour {
 
-    World world;
+    public World world { get; protected set; }
 
     public Sprite floorSprite;
 
+    public static WorldController instance { get; protected set; }
+
 	// Use this for initialization
 	void Start () {
+
+        if (instance != null) {
+            Debug.LogError("2 world controllers - there is a problem");
+        }
+
+        instance = this;
+
         world = new World();
         world.RandomizeTiles();
 
