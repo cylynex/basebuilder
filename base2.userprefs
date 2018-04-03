@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{71173239-E324-1419-124D-FC043E874487}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MouseController.cs">
+    <Files>
+      <File FileName="Assets/Scripts/MouseController.cs" Line="25" Column="2" />
+      <File FileName="Assets/Scripts/Tile.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/World.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/WorldController.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.base2 PreferredExecutionTarget="Unity.Editor" />
+  <MultiItemStartupConfigurations />
+</Properties>
