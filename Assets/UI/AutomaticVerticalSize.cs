@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[ExecuteInEditMode]
 public class AutomaticVerticalSize : MonoBehaviour {
 
 	public float childHeight = 35f;

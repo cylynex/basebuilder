@@ -17,7 +17,7 @@ public class Tile {
 		set {
 			TileType oldType = _type;
 			_type = value;
-			// Call the callback and let things know we've changed.
+			// Call the callback 
 
 			if(cbTileTypeChanged != null && oldType != _type)
 				cbTileTypeChanged(this);

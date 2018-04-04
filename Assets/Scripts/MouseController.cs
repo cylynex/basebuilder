@@ -6,6 +6,8 @@ public class MouseController : MonoBehaviour {
 
 	public GameObject circleCursorPrefab;
 
+    bool buildModeIsObjects = false;
+
 	Tile.TileType buildModeTile = Tile.TileType.Floor;
 
 	// The world-position of the mouse last frame.
@@ -81,7 +83,7 @@ public class MouseController : MonoBehaviour {
 		while(dragPreviewGameObjects.Count > 0) {
 			GameObject go = dragPreviewGameObjects[0];
 			dragPreviewGameObjects.RemoveAt(0);
-			SimplePool.Despawn (go);
+			Destroy (go);
 		}
 
 		if( Input.GetMouseButton(0) ) {
@@ -89,12 +91,20 @@ public class MouseController : MonoBehaviour {
 			for (int x = start_x; x <= end_x; x++) {
 				for (int y = start_y; y <= end_y; y++) {
 					Tile t = WorldController.Instance.World.GetTileAt(x, y);
-					if(t != null) {
-						// Display the building hint on top of this tile position
-						GameObject go = SimplePool.Spawn( circleCursorPrefab, new Vector3(x, y, 0), Quaternion.identity );
-						go.transform.SetParent(this.transform, true);
-						dragPreviewGameObjects.Add(go);
-					}
+
+                    // Check if its floor or objects
+                    if (buildModeIsObjects == true) {
+                        // Place objects
+
+                    } else {
+                        // Place Walls
+                        if (t != null) {
+                            // Display the building hint on top of this tile position
+                            GameObject go = Instantiate(circleCursorPrefab, new Vector3(x, y, 0), Quaternion.identity);
+                            go.transform.SetParent(this.transform, true);
+                            dragPreviewGameObjects.Add(go);
+                        }
+                    }
 				}
 			}
 		}
@@ -128,12 +138,19 @@ public class MouseController : MonoBehaviour {
 		Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, 3f, 25f);
 	}
 
-	public void SetMode_BuildFloor( ) {
+	public void SetMode_BuildFloor() {
+        buildModeIsObjects = false;
 		buildModeTile = Tile.TileType.Floor;
 	}
 	
-	public void SetMode_Bulldoze( ) {
+	public void SetMode_Bulldoze() {
+        buildModeIsObjects = false;
 		buildModeTile = Tile.TileType.Empty;
 	}
+
+
+    public void SetMode_BuildWall() {
+        buildModeIsObjects = true;
+    }
 	
 }

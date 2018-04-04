@@ -1,13 +1,12 @@
 ﻿<Properties StartupConfiguration="{CFCC46CA-635A-6B0C-E597-8408621C1460}|">
-  <MonoDevelop.Ide.ItemProperties.basebuilder PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/WorldController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/UI/Editor/AutomaticVerticalSizeEditor.cs">
     <Files>
-      <File FileName="Assets/Scripts/MouseController.cs" Line="8" Column="22" />
-      <File FileName="Assets/Scripts/WorldController.cs" Line="29" Column="17" />
-      <File FileName="Assets/Scripts/Tile.cs" Line="14" Column="37" />
-      <File FileName="Assets/Scripts/World.cs" Line="32" Column="34" />
-      <File FileName="Assets/Scripts/LooseObject.cs" Line="6" Column="5" />
-      <File FileName="Assets/Scripts/InstalledObject.cs" Line="6" Column="5" />
+      <File FileName="Assets/Scripts/MouseController.cs" Line="98" Column="25" />
+      <File FileName="Assets/Scripts/Tile.cs" Line="22" Column="24" />
+      <File FileName="Assets/Scripts/WorldController.cs" Line="50" Column="78" />
+      <File FileName="Assets/Scripts/World.cs" Line="3" Column="26" />
+      <File FileName="Assets/UI/Editor/AutomaticVerticalSizeEditor.cs" Line="4" Column="1" />
+      <File FileName="Assets/UI/AutomaticVerticalSize.cs" Line="4" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
